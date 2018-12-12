@@ -42,3 +42,6 @@ Temporary Items
 
 ### Node modules ###
 node_modules/
+
+.DS_Store
+docs/

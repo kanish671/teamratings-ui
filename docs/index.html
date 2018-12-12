@@ -1,63 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <title>New page</title>
-    <link rel="shortcut icon" href="favicon.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<title>r/coys ratings</title>
+	<link rel="shortcut icon" href="assets/img/favicon.svg">
 
-    <link rel="stylesheet" href="assets/css/main.min.css">
-
-      
-    <link rel="stylesheet" href="assets/css/theme.css">
-      
+	<!-- build:css -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- endbuild -->
+	  
+	<link rel="stylesheet" href="assets/css/theme.css">
+	  
   </head>
 
   <body>
-      
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href=".">BASIC</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="newpage.html">Another Page</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-      
-    <div class="container">
-      <div class="text-center">
-          <h1 class="mt-5">HOMEPAGE</h1>
-          <p class="lead">Kickstart your project. Visit <a target="_blank" href="https://bootstrapstarter.com">BootstrapStarter.com</a> for more projects. Good luck!</p>
-          <img src="assets/img/bootstrapstarter.jpg">
-      </div>
-    </div>
+	  
+	<div class="container">
+		<header class="py-3">
+			<div class="row flex-nowrap justify-content-between align-items-center">
+				<div class="col-4">
+					<img src="assets/img/logo.svg" alt="" height="80px" class="mr-4">
+				</div>
+				<div class="col-4">
+					<h1>r/coys ratings</h1>
+				</div>
+				<div class="col-4 d-flex justify-content-end align-items-center">
+					COYS 
+				</div>
+			</div>
+		</header>
+	</div>
+	  
+	<div class="container mt-4">
+	  <div class="row flex-nowrap justify-content-between align-items-center">
+	  	<div class="col-2 team-selector-div">
+		  	<div class="dropdown">
+		  		<button class="btn btn-sm btn-secondary dropdown-toggle team-selector-button" type="button" id="team-selector-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  			Select Team
+		  		</button>
+		  		<div class="dropdown-menu team-selector-dropdown" aria-labelledby="team-selector-dropdown">
+		  		</div>
+		  	</div>
+		  </div>
 
-    <script src="assets/js/main.min.js"></script>
+		  <div class="col-2 league-selector-div hide">
+		  	<div class="dropdown">
+		  		<button class="btn btn-sm btn-secondary dropdown-toggle league-selector-button" type="button" id="league-selector-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  			Select League
+		  		</button>
+		  		<div class="dropdown-menu league-selector-dropdown" aria-labelledby="league-selector-dropdown">
+		  		</div>
+		  	</div>
+		  </div>
+		  
+		  <div class="col-3 start-date-selector-div">
+		  	<label>Start Date</label>
+		  	<div class="col-12">
+		  		<input class="" type="date" name="startDate" value="" min="2018-08-01">
+		  	</div>
+		  </div>
 
-    
-    <script src="assets/js/theme.js"></script>
+		  <div class="col-3 end-date-selector-div">
+		  	<label>End Date</label>
+		  	<div class="col-12">
+		  		<input class="" type="date" name="endDate" value="" min="2018-08-01">
+		  	</div>
+		  </div>
+
+		  <div class="col-2 submit-button-div">
+		  	<button class="btn btn-sm btn-primary submit-button" type="button" id="submit-button">Get ratings</button>
+		  </div>
+	  </div>
+	  <div class="row">
+	  	<div class="card mx-auto mt-4">
+	  		<div class="card-body">
+	  			<canvas id="chart-line" width="800" height="400"></canvas>
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+
+	<!-- build:js -->
+	<script src="assets/js/main.js"></script>
+	 <!-- endbuild -->
+	
+	<script src="assets/js/theme.js"></script>
   </body>
 
 </html>

@@ -3,6 +3,67 @@ Template Name: Bootstrap 4 Boilerplate
 Copyright: Sal, https://www.wowthemes.net, https://bootstrapstarter.com/
 Version:1.0.0
 */
+@font-face
+{
+    font-family: ApexNew;
+    font-weight: 300;
+    font-style: normal;
 
-body {padding-top:56px;}
-img {max-width:100%;}
+    src: url(../../assets/font/apexnew-light.woff2) format('woff2'),url(../../assets/font/apexnew-light.woff) format('woff');
+}@font-face
+{
+    font-family: ApexNew;
+    font-weight: 300;
+    font-style: italic;
+
+    src: url(../../assets/font/apexnew-lightitalic.woff2) format('woff2'),url(../../assets/font/apexnew-lightitalic.woff) format('woff');
+}@font-face
+{
+    font-family: ApexNew;
+    font-weight: 400;
+    font-style: normal;
+
+    src: url(../../assets/font/apexnew-book.woff2) format('woff2'),url(../../assets/font/apexnew-book.woff) format('woff');
+}@font-face
+{
+    font-family: ApexNew;
+    font-weight: 400;
+    font-style: italic;
+
+    src: url(../../assets/font/apexnew-bookitalic.woff2) format('woff2'),url(../../assets/font/apexnew-bookitalic.woff) format('woff');
+}@font-face
+{
+    font-family: ApexNew;
+    font-weight: 500;
+    font-style: normal;
+
+    src: url(../../assets/font/apexnew-medium.woff2) format('woff2'),url(../../assets/font/apexnew-medium.woff) format('woff');
+}@font-face
+{
+    font-family: ApexNew;
+    font-weight: 700;
+    font-style: normal;
+
+    src: url(../../assets/font/apexnew-bold.woff2) format('woff2'),url(../../assets/font/apexnew-bold.woff) format('woff');
+}
+body
+{
+    font-family: ApexNew,Helvetica Neue,sans-serif;
+
+    color: white;
+    background-color: #111836;
+
+    text-rendering: optimizeLegibility;
+}
+img
+{
+    max-width: 100%;
+}
+button
+{
+    cursor: pointer;
+}
+.hide
+{
+    display: none !important;
+}
