@@ -30,25 +30,52 @@ function renderAllLeagues(leagues) {
 	bindAllLeagueActions();
 }
 
+function renderPlayers(players) {
+	_.each(players, function(player) {
+		$('.player-selector-dropdown').append(`<button class="dropdown-item" id="player-${player.playerId}" data-playerid="${player.playerId}" type="button">${player.name}</button>`);
+	});
+	bindAllPlayerActions();
+}
+
 function bindAllTeamActions() {
 	$('.team-selector-dropdown .dropdown-item').on('click', function(e) {
 		console.log('clicked');
-		var teamId = $(e.currentTarget).attr('data-teamid');
+		// var teamId = $(e.currentTarget).attr('data-teamid');
+		var teamId = 1;
 		$('.team-selector-button').text($(e.currentTarget).text());
 		$('.team-selector-button').attr('data-teamid', teamId);
 		$('.league-selector-div').removeClass('hide');
 		getAllLeaguesForTeam(teamId);
 	});
+
+	$('.team-selector-dropdown .dropdown-item:nth-child(1)').click();
 }
 
 function bindAllLeagueActions() {
 	$('.league-selector-dropdown .dropdown-item').on('click', function(e) {
 		console.log('clicked');
 		var leagueId = $(e.currentTarget).attr('data-leagueid');
-		var teamId = $('.team-selector-button').attr('data-teamid');
+		// var teamId = $('.team-selector-button').attr('data-teamid');
+		var teamId = 1;
 		$('.league-selector-button').text($(e.currentTarget).text());
 		$('.league-selector-button').attr('data-leagueid', leagueId);
-		getAllMatchesForTeam(teamId, leagueId, 1); // seasonId is 1 for now
+		$('.player-selector-div').removeClass('hide');
+		getAllPlayersForTeam(teamId);
+		// getAllMatchesForTeam(teamId, leagueId, 1); // seasonId is 1 for now
+	});
+}
+
+function bindAllPlayerActions() {
+	$('.player-selector-dropdown .dropdown-item').on('click', function(e) {
+		console.log('clicked');
+		var playerId = $(e.currentTarget).attr('data-playerid');
+		// var teamId = $('.team-selector-button').attr('data-teamid');
+		var teamId = 1;
+		var startDate = $('[name=startDate]').val();
+		var endDate = $('[name=endDate]').val();
+		$('.player-selector-button').text($(e.currentTarget).text());
+		$('.player-selector-button').attr('data-playerid', playerId);
+		getRatingsForPlayer(playerId, startDate, endDate);
 	});
 }
 
@@ -84,14 +111,49 @@ function getAllMatchesForTeam(teamId, leagueId, seasonId) {
 		});
 }
 
-function renderChart() {
+function getAllPlayersForTeam(teamId) {
+	axios.get('/player/getallbyfilters', {
+			params: {
+				teamId: teamId
+			}
+		})
+		.then(function(response) {
+			console.log(response);
+			renderPlayers(response.data.responseObj.players)
+		})
+		.catch(function(error) {
+			console.log(error);
+		});
+}
+
+function getRatingsForPlayer(playerId, startDate, endDate) {
+	axios.get('/ratings/player/getratingsbetweendates', {
+			params: {
+				playerId: playerId,
+				startDate: startDate,
+				endDate: endDate
+			}
+		})
+		.then(function(response) {
+			console.log(response);
+			renderChart(response.data.responseObj.ratingsByMatch)
+		})
+		.catch(function(error) {
+			console.log(error);
+		});
+}
+
+function renderChart(ratings) {
+	var labels = [];
+	var data = [];
+	_.each(ratings, function(rating) {
+		labels.push(`${rating.match.opponentshortname}(${rating.match.venue})`);
+		data.push(rating.rating);
+	});
 	var chartData = {
-		labels: ["S", "M", "T", "W", "T", "F", "S"],
+		labels: labels,
 		datasets: [{
-			data: [589, 445, 483, 503, 689, 692, 634],
-		},
-		{
-			data: [639, 465, 493, 478, 589, 632, 674],
+			data: data
 		}]
 	};
 
@@ -104,7 +166,8 @@ function renderChart() {
 			scales: {
 				yAxes: [{
 					ticks: {
-						beginAtZero: false
+						beginAtZero: true,
+						max: 10
 					}
 				}]
 			},

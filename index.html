@@ -38,7 +38,7 @@
 	  
 	<div class="container mt-4">
 	  <div class="row flex-nowrap justify-content-between align-items-center">
-	  	<div class="col-2 team-selector-div">
+	  	<div class="col-2 team-selector-div hide">
 		  	<div class="dropdown">
 		  		<button class="btn btn-sm btn-secondary dropdown-toggle team-selector-button" type="button" id="team-selector-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		  			Select Team
@@ -48,7 +48,7 @@
 		  	</div>
 		  </div>
 
-		  <div class="col-2 league-selector-div hide">
+		  <div class="col-2 league-selector-div">
 		  	<div class="dropdown">
 		  		<button class="btn btn-sm btn-secondary dropdown-toggle league-selector-button" type="button" id="league-selector-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		  			Select League
@@ -57,18 +57,28 @@
 		  		</div>
 		  	</div>
 		  </div>
-		  
+
+		  <div class="col-2 player-selector-div hide">
+		  	<div class="dropdown">
+		  		<button class="btn btn-sm btn-secondary dropdown-toggle player-selector-button" type="button" id="player-selector-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  			Select Player
+		  		</button>
+		  		<div class="dropdown-menu player-selector-dropdown" aria-labelledby="player-selector-dropdown">
+		  		</div>
+		  	</div>
+		  </div>
+
 		  <div class="col-3 start-date-selector-div">
 		  	<label>Start Date</label>
 		  	<div class="col-12">
-		  		<input class="" type="date" name="startDate" value="" min="2018-08-01">
+		  		<input class="" type="date" name="startDate" value="2018-08-01" min="2018-08-01">
 		  	</div>
 		  </div>
 
 		  <div class="col-3 end-date-selector-div">
 		  	<label>End Date</label>
 		  	<div class="col-12">
-		  		<input class="" type="date" name="endDate" value="" min="2018-08-01">
+		  		<input class="" type="date" name="endDate" value="2018-09-10" min="2018-08-01">
 		  	</div>
 		  </div>
 
