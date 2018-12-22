@@ -59,11 +59,20 @@ img
 {
     max-width: 100%;
 }
-button
+button,
+.dropdown-toggle
 {
     cursor: pointer;
 }
 .hide
 {
     display: none !important;
+}
+.invisible
+{
+    visibility: none !important;
+}
+.inline-display
+{
+    display: inline !important;
 }
