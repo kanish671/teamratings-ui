@@ -25,5 +25,7 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }

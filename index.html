@@ -26,91 +26,30 @@
 				<div class="col-4">
 					<img src="assets/img/logo.svg" alt="" height="80px" class="mr-4">
 				</div>
-				<div class="col-4">
-					<h1>player ratings</h1>
+				<div class="col-8">
+					<h1>ratings application</h1>
 				</div>
-				<div class="col-4 d-flex justify-content-end align-items-center nav-item dropdown">
-		        <div class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Dropdown link
-		        </div>
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		          <a class="dropdown-item" href="/player-ratings.html">player</a>
-		          <a class="dropdown-item" href="/team-ratings.html">team</a>
-		          <a class="dropdown-item" href="/match-ratings.html">match</a>
-		        </div>
-				</div>
-			</div>
 		</header>
 	</div>
 	  
 	<div class="container mt-4">
-	  <div class="row flex-nowrap justify-content-between align-items-center">
-	  	<div class="col-2 team-selector-div hide">
-		  	<div class="dropdown">
-		  		<button class="btn btn-secondary dropdown-toggle team-selector-button" type="button" id="team-selector-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		  			Select Team
-		  		</button>
-		  		<div class="dropdown-menu team-selector-dropdown" aria-labelledby="team-selector-dropdown">
-		  		</div>
-		  	</div>
-		  </div>
-
-		  <div class="col-2 league-selector-div hide">
-		  	<div class="dropdown">
-		  		<button class="btn btn-secondary dropdown-toggle league-selector-button" type="button" id="league-selector-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		  			Select League
-		  		</button>
-		  		<div class="dropdown-menu league-selector-dropdown" aria-labelledby="league-selector-dropdown">
-		  		</div>
-		  	</div>
-		  </div>
-
-		  <div class="col-2 player-selector-div">
-		  	<div class="dropdown">
-		  		<button class="btn btn-secondary dropdown-toggle player-selector-button" type="button" id="player-selector-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		  			Select Player
-		  		</button>
-		  		<div class="dropdown-menu player-selector-dropdown" aria-labelledby="player-selector-dropdown">
-		  		</div>
-		  	</div>
-		  </div>
-
-		  <div class="col-3 start-date-selector-div">
-		  	<div class="input-group">
-		  		<div class="input-group-prepend">
-		  			<span class="input-group-text">Start Date</span>
-			  		<input class="form-control" type="date" name="startDate" value="2018-08-01" min="2018-08-01">
-			  	</div>
-		  	</div>
-		  </div>
-
-		  <div class="col-3 end-date-selector-div">
-		  	<div class="input-group">
-		  		<div class="input-group-prepend">
-		  			<span class="input-group-text">End Date</span>
-		  			<input class="form-control" type="date" name="endDate" value="2018-10-04" min="2018-08-01">
-		  		</div>
-		  	</div>
-		  </div>
-
-		  <div class="col-2 submit-button-div hide">
-		  	<button class="btn btn-sm btn-primary submit-button" type="button" id="submit-button">Get ratings</button>
-		  </div>
-	  </div>
-	  <div class="row">
-	  	<div class="card mx-auto mt-4">
-	  		<div class="card-body">
-	  			<canvas id="chart-line" width="1200" height="600"></canvas>
-	  		</div>
+	  <div class="col-12 d-flex justify-content-end align-items-center">
+	  	<div class="col-4 justify-content-between align-items-center">
+	  		<a class="links" href="/player-ratings.html">player ratings</a>
 	  	</div>
-	  </div>
+	  	<div class="col-4 justify-content-between align-items-center">
+	  		<a class="links" href="/team-ratings.html">team ratings</a>
+	  	</div>
+	  	<div class="col-4 justify-content-between align-items-center">
+	  		<a class="links" href="/match-ratings.html">match ratings</a>
+	  	</div>
+		</div>
+		<img src="assets/img/december-schedule.png" alt="December schedule">
 	</div>
 
 	<!-- build:js -->
 	<script src="assets/js/main.js"></script>
 	 <!-- endbuild -->
-	
-	<script src="assets/js/theme.js"></script>
   </body>
 
 </html>

@@ -76,3 +76,13 @@ button,
 {
     display: inline !important;
 }
+.links
+{
+    font-size: 20px;
+
+    margin: 0 110px;
+
+    text-decoration: none !important;
+
+    color: white;
+}
